@@ -10,6 +10,7 @@ using OpenCV.SDKDemo.ImageManipulations;
 using OpenCV.SDKDemo.MixedProcessing;
 using OpenCV.SDKDemo.Puzzle;
 using Org.Opencv.Imgproc;
+using Org.Opencv.Android;
 
 namespace OpenCV.SDKDemo
 {

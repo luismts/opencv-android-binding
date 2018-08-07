@@ -102,12 +102,6 @@
     <Folder Include="Assets\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Xamarin.OpenCV.Droid\Xamarin.OpenCV.Droid.csproj">
-      <Project>{3675b5a0-535b-4cfb-b523-ed60837278b9}</Project>
-      <Name>Xamarin.OpenCV.Droid</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\raw\lbpcascade_frontalface.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +130,12 @@
     <Content Include="MixedProcessing\jni\Android.mk" />
     <Content Include="MixedProcessing\jni\Application.mk" />
     <Content Include="MixedProcessing\jni\jni_part.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Xamarin.OpenCV.Droid\Xamarin.OpenCV.Droid.csproj">
+      <Project>{3675B5A0-535B-4CFB-B523-ED60837278B9}</Project>
+      <Name>Xamarin.OpenCV.Droid</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

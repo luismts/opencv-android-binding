@@ -5,7 +5,9 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.OpenCV.Droid", "Xamarin.OpenCV.Droid\Xamarin.OpenCV.Droid.csproj", "{3675B5A0-535B-4CFB-B523-ED60837278B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenCVDemo", "OpenCV.SDKDemo\OpenCVDemo.csproj", "{F0880AD6-6B72-458A-BE06-A300907B41B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples", "demo\Samples\Samples.csproj", "{F0880AD6-6B72-458A-BE06-A300907B41B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demo", "demo", "{7AD9CE9A-7E69-4CB2-B052-A4D6B7095062}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -98,5 +100,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F0880AD6-6B72-458A-BE06-A300907B41B3} = {7AD9CE9A-7E69-4CB2-B052-A4D6B7095062}
 	EndGlobalSection
 EndGlobal
