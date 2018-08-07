@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <attr
+        path="/api/package[@name='org.opencv.android']/class[@name='CameraGLRendererBase']/method[@name='setCameraPreviewSize' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='int']]"
+        name="visibility">public</attr>
+    <attr
+        path="/api/package[@name='org.opencv.android']/class[@name='Camera2Renderer']/method[@name='setCameraPreviewSize' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='int']]"
+        name="visibility">public</attr>
+
+    <attr path="/api/package[@name='org.opencv.android']/class[@name='CameraBridgeViewBase']/method[@name='setCvCameraViewListener' and count(parameter)=1 and parameter[1][@type='org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2']]"
+          name="managedName">SetCvCameraViewListener2</attr>
+</metadata>

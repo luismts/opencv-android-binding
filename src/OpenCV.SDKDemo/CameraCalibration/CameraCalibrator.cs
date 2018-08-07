@@ -1,11 +1,10 @@
 ﻿using Android.Util;
-using OpenCV.Core;
-using OpenCV.ImgProc;
+using Org.Opencv.Calib3d;
+using Org.Opencv.Core;
+using Org.Opencv.Imgproc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Size = OpenCV.Core.Size;
+using Size=Org.Opencv.Core.Size;
 
 namespace OpenCV.SDKDemo.CameraCalibration
 {
@@ -30,11 +29,11 @@ namespace OpenCV.SDKDemo.CameraCalibration
         public CameraCalibrator(int width, int height)
         {
             mImageSize = new Size(width, height);
-            mFlags = Calib3d.Calib3d.CalibFixPrincipalPoint +
-                     Calib3d.Calib3d.CalibZeroTangentDist +
-                     Calib3d.Calib3d.CalibFixAspectRatio +
-                     Calib3d.Calib3d.CalibFixK4 +
-                     Calib3d.Calib3d.CalibFixK5;
+            mFlags = Calib3d.CalibFixPrincipalPoint +
+                     Calib3d.CalibZeroTangentDist +
+                     Calib3d.CalibFixAspectRatio +
+                     Calib3d.CalibFixK4 +
+                     Calib3d.CalibFixK5;
             Mat.Eye(3, 3, CvType.Cv64fc1).CopyTo(mCameraMatrix);
             mCameraMatrix.Put(0, 0, 1.0);
             Mat.Zeros(5, 1, CvType.Cv64fc1).CopyTo(mDistortionCoefficients);
@@ -61,11 +60,11 @@ namespace OpenCV.SDKDemo.CameraCalibration
                 objectPoints.Add(objectPoints[0]);
             }
 
-            Calib3d.Calib3d.CalibrateCamera(objectPoints, mCornersBuffer, mImageSize,
+            Calib3d.CalibrateCamera(objectPoints, mCornersBuffer, mImageSize,
                     mCameraMatrix, mDistortionCoefficients, rvecs, tvecs, mFlags);
 
-            mIsCalibrated = Core.Core.CheckRange(mCameraMatrix)
-                    && Core.Core.CheckRange(mDistortionCoefficients);
+            mIsCalibrated = Core.CheckRange(mCameraMatrix)
+                    && Core.CheckRange(mDistortionCoefficients);
 
             mRms = computeReprojectionErrors(objectPoints, rvecs, tvecs, reprojectionErrors);
             Log.Info(TAG, String.Format("Average re-projection error: %f", mRms));
@@ -111,9 +110,9 @@ namespace OpenCV.SDKDemo.CameraCalibration
             for (int i = 0; i < objectPoints.Count; i++)
             {
                 MatOfPoint3f points = new MatOfPoint3f(objectPoints[i]);
-                Calib3d.Calib3d.ProjectPoints(points, rvecs[i], tvecs[i],
+                Calib3d.ProjectPoints(points, rvecs[i], tvecs[i],
                         mCameraMatrix, distortionCoefficients, cornersProjected);
-                error = Core.Core.Norm(mCornersBuffer[i], cornersProjected, Core.Core.NormL2);
+                error = Core.Norm(mCornersBuffer[i], cornersProjected, Core.NormL2);
 
                 int n = objectPoints[i].Rows();
                 viewErrors[i] = (float)Math.Sqrt(error * error / n);
@@ -128,8 +127,8 @@ namespace OpenCV.SDKDemo.CameraCalibration
 
         private void findPattern(Mat grayFrame)
         {
-            mPatternWasFound = Calib3d.Calib3d.FindCirclesGrid(grayFrame, mPatternSize,
-                    mCorners, Calib3d.Calib3d.CalibCbAsymmetricGrid);
+            mPatternWasFound = Calib3d.FindCirclesGrid(grayFrame, mPatternSize,
+                    mCorners, Calib3d.CalibCbAsymmetricGrid);
         }
 
         public void addCorners()
@@ -142,7 +141,7 @@ namespace OpenCV.SDKDemo.CameraCalibration
 
         private void drawPoints(Mat rgbaFrame)
         {
-            Calib3d.Calib3d.DrawChessboardCorners(rgbaFrame, mPatternSize, mCorners, mPatternWasFound);
+            Calib3d.DrawChessboardCorners(rgbaFrame, mPatternSize, mCorners, mPatternWasFound);
         }
 
         private void renderFrame(Mat rgbaFrame)
@@ -150,7 +149,7 @@ namespace OpenCV.SDKDemo.CameraCalibration
             drawPoints(rgbaFrame);
 
             Imgproc.PutText(rgbaFrame, "Captured: " + mCornersBuffer.Count, new Point(rgbaFrame.Cols() / 3 * 2, rgbaFrame.Rows() * 0.1),
-                    Core.Core.FontHersheySimplex, 1.0, new Scalar(255, 255, 0));
+                    Core.FontHersheySimplex, 1.0, new Scalar(255, 255, 0));
         }
 
         public Mat getCameraMatrix()

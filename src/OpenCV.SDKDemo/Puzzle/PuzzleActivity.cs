@@ -1,10 +1,10 @@
-
+﻿
 using Android.App;
 using Android.OS;
 using Android.Util;
 using Android.Views;
-using OpenCV.Android;
-using OpenCV.Core;
+using Org.Opencv.Android;
+using Org.Opencv.Core;
 using OpenCV.SDKDemo.Puzzle;
 using OpenCV.SDKDemo.Utilities;
 

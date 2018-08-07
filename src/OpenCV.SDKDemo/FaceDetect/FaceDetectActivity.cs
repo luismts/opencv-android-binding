@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,14 +10,14 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using OpenCV.SDKDemo.Utilities;
-using OpenCV.Core;
-using OpenCV.ObjDetect;
-using OpenCV.Android;
+using Org.Opencv.Core;
+using Org.Opencv.Objdetect;
+using Org.Opencv.Android;
 using Java.IO;
 using OpenCV.SDKDemo.ColorBlobDetection;
 using Android.Util;
-using Size = OpenCV.Core.Size;
-using OpenCV.ImgProc;
+using Size = Org.Opencv.Core.Size;
+using Org.Opencv.Imgproc;
 using Java.Lang;
 
 namespace OpenCV.SDKDemo.FaceDetect

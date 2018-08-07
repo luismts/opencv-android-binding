@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +9,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using OpenCV.Core;
-using OpenCV.Android;
+using Org.Opencv.Core;
+using Org.Opencv.Android;
 using Android.Util;
 using Size = Android.Hardware.Camera.Size;
 using Java.Text;

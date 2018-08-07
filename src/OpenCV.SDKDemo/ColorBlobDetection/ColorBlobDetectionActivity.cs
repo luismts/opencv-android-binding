@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,12 +10,12 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Content.PM;
-using OpenCV.Core;
-using OpenCV.Android;
+using Org.Opencv.Core;
+using Org.Opencv.Android;
 using Android.Util;
 using OpenCV.SDKDemo.Utilities;
-using OpenCV.ImgProc;
-using Size = OpenCV.Core.Size;
+using Org.Opencv.Imgproc;
+using Size = Org.Opencv.Core.Size;
 
 namespace OpenCV.SDKDemo.ColorBlobDetection
 {
@@ -132,7 +132,7 @@ namespace OpenCV.SDKDemo.ColorBlobDetection
             Imgproc.CvtColor(touchedRegionRgba, touchedRegionHsv, Imgproc.ColorRgb2hsvFull);
 
             // Calculate average color of touched region
-            mBlobColorHsv = Core.Core.SumElems(touchedRegionHsv);
+            mBlobColorHsv = Core.SumElems(touchedRegionHsv);
             int pointCount = touchedRect.Width * touchedRect.Height;
             for (int i = 0; i < mBlobColorHsv.Val.Count; i++)
                 mBlobColorHsv.Val[i] /= pointCount;

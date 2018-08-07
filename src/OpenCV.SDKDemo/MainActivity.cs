@@ -9,6 +9,7 @@ using OpenCV.SDKDemo.FaceDetect;
 using OpenCV.SDKDemo.ImageManipulations;
 using OpenCV.SDKDemo.MixedProcessing;
 using OpenCV.SDKDemo.Puzzle;
+using Org.Opencv.Imgproc;
 
 namespace OpenCV.SDKDemo
 {

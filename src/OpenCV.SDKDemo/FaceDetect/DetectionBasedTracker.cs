@@ -1,5 +1,5 @@
-using Android.Runtime;
-using OpenCV.Core;
+﻿using Android.Runtime;
+using Org.Opencv.Core;
 using System;
 using System.Runtime.InteropServices;
 

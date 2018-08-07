@@ -1,6 +1,6 @@
-using Android.Runtime;
-using OpenCV.Core;
-using OpenCV.ImgProc;
+﻿using Android.Runtime;
+using Org.Opencv.Core;
+using Org.Opencv.Imgproc;
 using System.Collections.Generic;
 
 namespace OpenCV.SDKDemo.ColorBlobDetection
@@ -74,7 +74,7 @@ namespace OpenCV.SDKDemo.ColorBlobDetection
 
             Imgproc.CvtColor(mPyrDownMat, mHsvMat, Imgproc.ColorRgb2hsvFull);
 
-            Core.Core.InRange(mHsvMat, mLowerBound, mUpperBound, mMask);
+            Core.InRange(mHsvMat, mLowerBound, mUpperBound, mMask);
             Imgproc.Dilate(mMask, mDilatedMask, new Mat());
 
             IList<MatOfPoint> contours = new JavaList<MatOfPoint>();
@@ -99,7 +99,7 @@ namespace OpenCV.SDKDemo.ColorBlobDetection
                 MatOfPoint contour = each;
                 if (Imgproc.ContourArea(contour) > mMinContourArea * maxArea)
                 {
-                    Core.Core.Multiply(contour, new Scalar(4, 4), contour);
+                    Core.Multiply(contour, new Scalar(4, 4), contour);
                     mContours.Add(contour);
                 }
             }

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using OpenCV.Core;
+using Org.Opencv.Core;
 using Android.Util;
 
 namespace OpenCV.SDKDemo.CameraCalibration

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,11 +9,11 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using OpenCV.Android;
-using OpenCV.Core;
+using Org.Opencv.Android;
+using Org.Opencv.Core;
 using Android.Util;
-using OpenCV.ImgProc;
-using Size = OpenCV.Core.Size;
+using Org.Opencv.Imgproc;
+using Size = Org.Opencv.Core.Size;
 using Java.Util;
 
 namespace OpenCV.SDKDemo.ImageManipulations
@@ -212,7 +212,7 @@ namespace OpenCV.SDKDemo.ImageManipulations
                     for (int c = 0; c < 3; c++)
                     {
                         Imgproc.CalcHist(Arrays.AsList(rgba).Cast<Mat>().ToList(), mChannels[c], mMat0, hist, mHistSize, mRanges);
-                        Core.Core.Normalize(hist, hist, sizeRgba.Height / 2, 0, Core.Core.NormInf);
+                        Core.Normalize(hist, hist, sizeRgba.Height / 2, 0, Core.NormInf);
                         hist.Get(0, 0, mBuff);
                         for (int h = 0; h < mHistSizeNum; h++)
                         {
@@ -226,7 +226,7 @@ namespace OpenCV.SDKDemo.ImageManipulations
                     Imgproc.CvtColor(rgba, mIntermediateMat, Imgproc.ColorRgb2hsvFull);
                     // Value
                     Imgproc.CalcHist(Arrays.AsList(mIntermediateMat).Cast<Mat>().ToList(), mChannels[2], mMat0, hist, mHistSize, mRanges);
-                    Core.Core.Normalize(hist, hist, sizeRgba.Height / 2, 0, Core.Core.NormInf);
+                    Core.Normalize(hist, hist, sizeRgba.Height / 2, 0, Core.NormInf);
                     hist.Get(0, 0, mBuff);
                     for (int h = 0; h < mHistSizeNum; h++)
                     {
@@ -237,7 +237,7 @@ namespace OpenCV.SDKDemo.ImageManipulations
                     }
                     // Hue
                     Imgproc.CalcHist(Arrays.AsList(mIntermediateMat).Cast<Mat>().ToList(), mChannels[0], mMat0, hist, mHistSize, mRanges);
-                    Core.Core.Normalize(hist, hist, sizeRgba.Height / 2, 0, Core.Core.NormInf);
+                    Core.Normalize(hist, hist, sizeRgba.Height / 2, 0, Core.NormInf);
                     hist.Get(0, 0, mBuff);
                     for (int h = 0; h < mHistSizeNum; h++)
                     {
@@ -260,7 +260,7 @@ namespace OpenCV.SDKDemo.ImageManipulations
                     Mat grayInnerWindow = gray.Submat(top, top + height, left, left + width);
                     rgbaInnerWindow = rgba.Submat(top, top + height, left, left + width);
                     Imgproc.Sobel(grayInnerWindow, mIntermediateMat, CvType.Cv8u, 1, 1);
-                    Core.Core.ConvertScaleAbs(mIntermediateMat, mIntermediateMat, 10, 0);
+                    Core.ConvertScaleAbs(mIntermediateMat, mIntermediateMat, 10, 0);
                     Imgproc.CvtColor(mIntermediateMat, rgbaInnerWindow, Imgproc.ColorGray2bgra, 4);
                     grayInnerWindow.Release();
                     rgbaInnerWindow.Release();
@@ -268,7 +268,7 @@ namespace OpenCV.SDKDemo.ImageManipulations
 
                 case ImageManipulationsActivity.VIEW_MODE_SEPIA:
                     rgbaInnerWindow = rgba.Submat(top, top + height, left, left + width);
-                    Core.Core.Transform(rgbaInnerWindow, rgbaInnerWindow, mSepiaKernel);
+                    Core.Transform(rgbaInnerWindow, rgbaInnerWindow, mSepiaKernel);
                     rgbaInnerWindow.Release();
                     break;
 
@@ -298,8 +298,8 @@ namespace OpenCV.SDKDemo.ImageManipulations
                     rgbaInnerWindow = rgba.Submat(top, top + height, left, left + width);
                     Imgproc.Canny(rgbaInnerWindow, mIntermediateMat, 80, 90);
                     rgbaInnerWindow.SetTo(new Scalar(0, 0, 0, 255), mIntermediateMat);
-                    Core.Core.ConvertScaleAbs(rgbaInnerWindow, mIntermediateMat, 1.0 / 16, 0);
-                    Core.Core.ConvertScaleAbs(mIntermediateMat, rgbaInnerWindow, 16, 0);
+                    Core.ConvertScaleAbs(rgbaInnerWindow, mIntermediateMat, 1.0 / 16, 0);
+                    Core.ConvertScaleAbs(mIntermediateMat, rgbaInnerWindow, 16, 0);
                     rgbaInnerWindow.Release();
                     break;
             }

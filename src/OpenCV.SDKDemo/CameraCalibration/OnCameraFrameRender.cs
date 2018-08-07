@@ -1,7 +1,7 @@
 ﻿using Android.Content.Res;
-using OpenCV.Android;
-using OpenCV.Core;
-using OpenCV.ImgProc;
+using Org.Opencv.Android;
+using Org.Opencv.Core;
+using Org.Opencv.Imgproc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -86,9 +86,9 @@ namespace OpenCV.SDKDemo.CameraCalibration
             Imgproc.FillPoly(comparisonFrame, border, new Scalar(255, 255, 255));
 
             Imgproc.PutText(comparisonFrame, mResources.GetString(Resource.String.original), new Point(mWidth * 0.1, mHeight * 0.1),
-                    Core.Core.FontHersheySimplex, 1.0, new Scalar(255, 255, 0));
+                    Core.FontHersheySimplex, 1.0, new Scalar(255, 255, 0));
             Imgproc.PutText(comparisonFrame, mResources.GetString(Resource.String.undistorted), new Point(mWidth * 0.6, mHeight * 0.1),
-                    Core.Core.FontHersheySimplex, 1.0, new Scalar(255, 255, 0));
+                    Core.FontHersheySimplex, 1.0, new Scalar(255, 255, 0));
 
             return comparisonFrame;
         }

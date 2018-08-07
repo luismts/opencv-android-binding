@@ -1,6 +1,6 @@
-using Android.Util;
-using OpenCV.Core;
-using OpenCV.ImgProc;
+﻿using Android.Util;
+using Org.Opencv.Core;
+using Org.Opencv.Imgproc;
 using OpenCV.SDKDemo.Utilities;
 using System;
 
