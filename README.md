@@ -5,12 +5,14 @@
 A Xamarin.Android binding library for [OpenCV](https://opencv.org/) library.
 
 ## About
-This project is forked from [NAXAM/opencv-android-binding](https://github.com/NAXAM/opencv-android-binding), enhanced and maintained by Naxam Co.,Ltd.<br>
+This project is forked from [NAXAM/opencv-android-binding](https://github.com/NAXAM/opencv-android-binding), enhanced and maintained by 4Twenty Solutions team.<br>
 We specialize in developing web, desktop and mobile applications using Xamarin and native technology stack.<br>
 
 **Looking for developers for your project?**<br>
 
-<a href="mailto:sales@4twenty.solutions"> 
+<a href="mailto:sales@4twenty.solutions">Email us</a> 
+<a href="https://4twenty.solutions">Our site</a>
+
 
 ## Installation
 ```
