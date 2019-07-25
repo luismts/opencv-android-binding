@@ -9,4 +9,35 @@
 
     <attr path="/api/package[@name='org.opencv.android']/class[@name='CameraBridgeViewBase']/method[@name='setCvCameraViewListener' and count(parameter)=1 and parameter[1][@type='org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2']]"
           name="managedName">SetCvCameraViewListener2</attr>
+
+    <!--<remove-node path="api/package[@name='org.opencv.core']/class[@name='Core']/field[@name='BorderReflect101']" />
+    .NET namespace names-->
+    <attr path="/api/package[@name='org.opencv.core']" name="managedName">OpenCV.CoreNET</attr>
+    <attr path="/api/package[@name='org.opencv.android']" name="managedName">OpenCV.AndroidNET</attr>
+    <attr path="/api/package[@name='org.opencv.calib3d']" name="managedName">OpenCV.Calib3dNET</attr>
+    <attr path="/api/package[@name='org.opencv.engine']" name="managedName">OpenCV.EngineNET</attr>
+    <attr path="/api/package[@name='org.opencv.features2d']" name="managedName">OpenCV.Features2dNET</attr>
+    <attr path="/api/package[@name='org.opencv.imgcodecs']" name="managedName">OpenCV.ImgCodecsNET</attr>
+    <attr path="/api/package[@name='org.opencv.imgproc']" name="managedName">OpenCV.ImgProcNET</attr>
+    <attr path="/api/package[@name='org.opencv.ml']" name="managedName">OpenCV.MLNET</attr>
+    <attr path="/api/package[@name='org.opencv.objdetect']" name="managedName">OpenCV.ObjDetectNET</attr>
+    <attr path="/api/package[@name='org.opencv.photo']" name="managedName">OpenCV.PhotoNET</attr>
+    <attr path="/api/package[@name='org.opencv.utils']" name="managedName">OpenCV.UtilsNET</attr>
+    <attr path="/api/package[@name='org.opencv.video']" name="managedName">OpenCV.VideoNET</attr>
+    <attr path="/api/package[@name='org.opencv.videoio']" name="managedName">OpenCV.VideoIONET</attr>
+    <attr path="/api/package[@name='org.opencv.dnn']" name="managedName">OpenCV.DNNNET</attr>
+
+    <attr path="api/package[@name='org.opencv.core']/class[@name='Core']/field[@name='BORDER_REFLECT_101']" name="managedName">BorderReflect101Field</attr>
+    <attr path="api/package[@name='org.opencv.core']/class[@name='Core']/field[@name='VERSION_MAJOR']" name="managedName">VersionMajorField</attr>
+    <attr path="api/package[@name='org.opencv.core']/class[@name='Core']/field[@name='VERSION_MINOR']" name="managedName">VersionMinorField</attr>
+    <attr path="api/package[@name='org.opencv.core']/class[@name='Core']/field[@name='VERSION_REVISION']" name="managedName">VersionRevisionField</attr>
+
+    <attr path="api/package[@name='org.opencv.features2d']/class[@name='AgastFeatureDetector']/field[@name='NONMAX_SUPPRESSION']" name="managedName">NonmaxSuppressionField</attr>
+    <attr path="api/package[@name='org.opencv.features2d']/class[@name='AgastFeatureDetector']/field[@name='THRESHOLD']" name="managedName">ThresholdField</attr>
+    <attr path="api/package[@name='org.opencv.features2d']/class[@name='FastFeatureDetector']/field[@name='NONMAX_SUPPRESSION']" name="managedName">NonmaxSuppressionField</attr>
+    <attr path="api/package[@name='org.opencv.features2d']/class[@name='FastFeatureDetector']/field[@name='THRESHOLD']" name="managedName">ThresholdField</attr>
+
+    <attr path="api/package[@name='org.opencv.ml']/class[@name='SVM']/field[@name='DEGREE']" name="managedName">DegreeField</attr>
+    <attr path="api/package[@name='org.opencv.ml']/class[@name='SVM']/field[@name='GAMMA']" name="managedName">GammaField</attr>
+    <attr path="api/package[@name='org.opencv.ml']/class[@name='SVM']/field[@name='NU']" name="managedName">NuField</attr>
 </metadata>

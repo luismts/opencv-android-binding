@@ -10,15 +10,15 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using OpenCV.SDKDemo.Utilities;
-using Org.Opencv.Core;
-using Org.Opencv.Objdetect;
-using Org.Opencv.Android;
 using Java.IO;
 using OpenCV.SDKDemo.ColorBlobDetection;
 using Android.Util;
-using Size = Org.Opencv.Core.Size;
-using Org.Opencv.Imgproc;
 using Java.Lang;
+using OpenCV.AndroidNET;
+using OpenCV.CoreNET;
+using OpenCV.ImgProcNET;
+using OpenCV.ObjDetectNET;
+using Size = OpenCV.CoreNET.Size;
 
 namespace OpenCV.SDKDemo.FaceDetect
 {
@@ -231,7 +231,7 @@ namespace OpenCV.SDKDemo.FaceDetect
                 case LoaderCallbackInterface.Success:
                     {
                         Log.Info(ActivityTags.FaceDetect, "OpenCV loaded successfully");
-
+                        Mat ss = new Mat();
                         // Load native library after(!) OpenCV initialization
                         JavaSystem.LoadLibrary("detection_based_tracker");
 

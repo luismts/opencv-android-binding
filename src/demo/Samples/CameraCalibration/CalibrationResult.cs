@@ -9,8 +9,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Org.Opencv.Core;
 using Android.Util;
+using OpenCV.CoreNET;
 
 namespace OpenCV.SDKDemo.CameraCalibration
 {

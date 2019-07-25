@@ -10,12 +10,12 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Content.PM;
-using Org.Opencv.Core;
-using Org.Opencv.Android;
 using Android.Util;
+using OpenCV.AndroidNET;
+using OpenCV.CoreNET;
+using OpenCV.ImgProcNET;
 using OpenCV.SDKDemo.Utilities;
-using Org.Opencv.Imgproc;
-using Size = Org.Opencv.Core.Size;
+using Size = OpenCV.CoreNET.Size;
 
 namespace OpenCV.SDKDemo.ColorBlobDetection
 {

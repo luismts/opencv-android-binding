@@ -1,10 +1,10 @@
 ﻿using Android.Util;
-using Org.Opencv.Calib3d;
-using Org.Opencv.Core;
-using Org.Opencv.Imgproc;
 using System;
 using System.Collections.Generic;
-using Size=Org.Opencv.Core.Size;
+using OpenCV.Calib3dNET;
+using OpenCV.CoreNET;
+using OpenCV.ImgProcNET;
+using Size = OpenCV.CoreNET.Size;
 
 namespace OpenCV.SDKDemo.CameraCalibration
 {
@@ -149,7 +149,7 @@ namespace OpenCV.SDKDemo.CameraCalibration
             drawPoints(rgbaFrame);
 
             Imgproc.PutText(rgbaFrame, "Captured: " + mCornersBuffer.Count, new Point(rgbaFrame.Cols() / 3 * 2, rgbaFrame.Rows() * 0.1),
-                    Core.FontHersheySimplex, 1.0, new Scalar(255, 255, 0));
+                Imgproc.FontHersheySimplex, 1.0, new Scalar(255, 255, 0));
         }
 
         public Mat getCameraMatrix()

@@ -9,12 +9,12 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Org.Opencv.Core;
-using Org.Opencv.Android;
 using Android.Util;
 using Java.Lang;
-using Org.Opencv.Imgproc;
 using System.Runtime.InteropServices;
+using OpenCV.AndroidNET;
+using OpenCV.CoreNET;
+using OpenCV.ImgProcNET;
 
 namespace OpenCV.SDKDemo.MixedProcessing
 {

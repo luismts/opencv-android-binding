@@ -1,8 +1,8 @@
 ﻿using Android.Util;
-using Org.Opencv.Core;
-using Org.Opencv.Imgproc;
 using OpenCV.SDKDemo.Utilities;
 using System;
+using OpenCV.CoreNET;
+using OpenCV.ImgProcNET;
 
 namespace OpenCV.SDKDemo.Puzzle
 {

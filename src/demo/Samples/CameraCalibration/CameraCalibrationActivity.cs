@@ -9,11 +9,11 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Org.Opencv.Android;
 using Android.Util;
 using OpenCV.SDKDemo.Utilities;
-using Org.Opencv.Core;
 using System.Threading.Tasks;
+using OpenCV.AndroidNET;
+using OpenCV.CoreNET;
 
 namespace OpenCV.SDKDemo.CameraCalibration
 {
@@ -195,7 +195,7 @@ namespace OpenCV.SDKDemo.CameraCalibration
         private readonly View.IOnTouchListener _listener;
         private readonly CameraCalibrationActivity _activity;
         public Callback(Context context, View.IOnTouchListener listener, CameraCalibrationActivity activity)
-            : base(context)
+            : base(activity)
         {
             _listener = listener;
             _activity = activity;

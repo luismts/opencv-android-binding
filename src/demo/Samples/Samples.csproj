@@ -16,7 +16,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -29,6 +29,10 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
+    <AndroidSupportedAbis />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -79,12 +83,10 @@
     <AndroidNativeLibrary Include="lib\arm64-v8a\libmixed_sample.so" />
     <AndroidNativeLibrary Include="lib\armeabi-v7a\libdetection_based_tracker.so" />
     <AndroidNativeLibrary Include="lib\armeabi-v7a\libmixed_sample.so" />
-    <AndroidNativeLibrary Include="lib\armeabi\libdetection_based_tracker.so" />
-    <AndroidNativeLibrary Include="lib\armeabi\libmixed_sample.so" />
-    <AndroidNativeLibrary Include="lib\x86\libdetection_based_tracker.so" />
-    <AndroidNativeLibrary Include="lib\x86\libmixed_sample.so" />
     <AndroidNativeLibrary Include="lib\x86_64\libdetection_based_tracker.so" />
     <AndroidNativeLibrary Include="lib\x86_64\libmixed_sample.so" />
+    <None Include="lib\x86\libdetection_based_tracker.so" />
+    <None Include="lib\x86\libmixed_sample.so" />
     <None Include="Properties\AndroidManifest.xml">
       <SubType>Designer</SubType>
     </None>
@@ -100,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
+    <Folder Include="lib\armeabi\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\raw\lbpcascade_frontalface.xml" />
@@ -125,10 +128,12 @@
   <ItemGroup>
     <Content Include="FaceDetect\jni\Android.mk" />
     <Content Include="FaceDetect\jni\Application.mk" />
+    <Content Include="FaceDetect\jni\CMakeLists.txt" />
     <Content Include="FaceDetect\jni\DetectionBasedTracker_jni.cpp" />
     <Content Include="FaceDetect\jni\DetectionBasedTracker_jni.h" />
     <Content Include="MixedProcessing\jni\Android.mk" />
     <Content Include="MixedProcessing\jni\Application.mk" />
+    <Content Include="MixedProcessing\jni\CMakeLists.txt" />
     <Content Include="MixedProcessing\jni\jni_part.cpp" />
   </ItemGroup>
   <ItemGroup>

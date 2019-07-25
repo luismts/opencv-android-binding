@@ -3,8 +3,8 @@ using Android.App;
 using Android.OS;
 using Android.Util;
 using Android.Views;
-using Org.Opencv.Android;
-using Org.Opencv.Core;
+using OpenCV.AndroidNET;
+using OpenCV.CoreNET;
 using OpenCV.SDKDemo.Puzzle;
 using OpenCV.SDKDemo.Utilities;
 

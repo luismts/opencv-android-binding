@@ -9,11 +9,10 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Org.Opencv.Android;
-using Org.Opencv.Core;
 using Android.Hardware;
 using Android.Util;
 using Java.IO;
+using OpenCV.AndroidNET;
 using Size = Android.Hardware.Camera.Size;
 
 namespace OpenCV.SDKDemo.CameraControl

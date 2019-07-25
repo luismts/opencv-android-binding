@@ -5,9 +5,9 @@ using Android.OS;
 using Android.Util;
 using Android.Views;
 using OpenCV.SDKDemo.Utilities;
-using Org.Opencv.Core;
-using Org.Opencv.Android;
 using OpenCV;
+using OpenCV.AndroidNET;
+using OpenCV.CoreNET;
 
 namespace OpenCV.SDKDemo.CameraPreview
 {

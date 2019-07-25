@@ -1,11 +1,11 @@
 ﻿using Android.Content.Res;
-using Org.Opencv.Android;
-using Org.Opencv.Core;
-using Org.Opencv.Imgproc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using OpenCV.AndroidNET;
+using OpenCV.CoreNET;
+using OpenCV.ImgProcNET;
 
 namespace OpenCV.SDKDemo.CameraCalibration
 {
@@ -51,7 +51,7 @@ namespace OpenCV.SDKDemo.CameraCalibration
         public override Mat Render(CameraBridgeViewBase.ICvCameraViewFrame inputFrame)
         {
             Mat renderedFrame = new Mat(inputFrame.Rgba().Size(), inputFrame.Rgba().Type());
-            Imgproc.Undistort(inputFrame.Rgba(), renderedFrame,
+            Calib3dNET.Calib3d.Undistort(inputFrame.Rgba(), renderedFrame,
                     mCalibrator.getCameraMatrix(), mCalibrator.getDistortionCoefficients());
 
             return renderedFrame;
@@ -74,8 +74,8 @@ namespace OpenCV.SDKDemo.CameraCalibration
         public override Mat Render(CameraBridgeViewBase.ICvCameraViewFrame inputFrame)
         {
             Mat undistortedFrame = new Mat(inputFrame.Rgba().Size(), inputFrame.Rgba().Type());
-            Imgproc.Undistort(inputFrame.Rgba(), undistortedFrame,
-                    mCalibrator.getCameraMatrix(), mCalibrator.getDistortionCoefficients());
+            Calib3dNET.Calib3d.Undistort(inputFrame.Rgba(), undistortedFrame,
+                mCalibrator.getCameraMatrix(), mCalibrator.getDistortionCoefficients());
 
             Mat comparisonFrame = inputFrame.Rgba();
             undistortedFrame.ColRange(new Range(0, mWidth / 2)).CopyTo(comparisonFrame.ColRange(new Range(mWidth / 2, mWidth)));
@@ -85,10 +85,11 @@ namespace OpenCV.SDKDemo.CameraCalibration
                     new Point(mWidth / 2 + shift, mHeight), new Point(mWidth / 2 - shift, mHeight)));
             Imgproc.FillPoly(comparisonFrame, border, new Scalar(255, 255, 255));
 
+            
             Imgproc.PutText(comparisonFrame, mResources.GetString(Resource.String.original), new Point(mWidth * 0.1, mHeight * 0.1),
-                    Core.FontHersheySimplex, 1.0, new Scalar(255, 255, 0));
+                Imgproc.FontHersheySimplex, 1.0, new Scalar(255, 255, 0));
             Imgproc.PutText(comparisonFrame, mResources.GetString(Resource.String.undistorted), new Point(mWidth * 0.6, mHeight * 0.1),
-                    Core.FontHersheySimplex, 1.0, new Scalar(255, 255, 0));
+                Imgproc.FontHersheySimplex, 1.0, new Scalar(255, 255, 0));
 
             return comparisonFrame;
         }

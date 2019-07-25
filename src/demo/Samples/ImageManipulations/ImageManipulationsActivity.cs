@@ -7,14 +7,14 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
-using Org.Opencv.Android;
-using Org.Opencv.Core;
-using Android.Util;
-using Org.Opencv.Imgproc;
-using Size = Org.Opencv.Core.Size;
 using Java.Util;
+using OpenCV.AndroidNET;
+using OpenCV.CoreNET;
+using OpenCV.ImgProcNET;
+using Size = OpenCV.CoreNET.Size;
 
 namespace OpenCV.SDKDemo.ImageManipulations
 {

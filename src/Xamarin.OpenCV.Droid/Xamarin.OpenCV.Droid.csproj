@@ -13,7 +13,7 @@
     <AssemblyName>OpenCV</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <JavaDocPaths>Jars\docs</JavaDocPaths>
     <NoWarn>CS0109,CS0108,CS0114,CS0618</NoWarn>
   </PropertyGroup>
@@ -154,7 +154,7 @@
     <Folder Include="Additions\" />
   </ItemGroup>
   <ItemGroup>
-    <LibraryProjectZip Include="Jars\libOpenCV-3.4.2.aar" />
+    <LibraryProjectZip Include="Jars\opencv-4.1.0.aar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

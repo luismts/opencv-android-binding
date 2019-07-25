@@ -1,7 +1,7 @@
 ﻿using Android.Runtime;
-using Org.Opencv.Core;
-using Org.Opencv.Imgproc;
 using System.Collections.Generic;
+using OpenCV.CoreNET;
+using OpenCV.ImgProcNET;
 
 namespace OpenCV.SDKDemo.ColorBlobDetection
 {
